@@ -5455,13 +5455,16 @@
   "src_dot_shipping_dot_components_dot_ShippingZoneDetailsPage_dot_4270729636": {
     "string": "This is default shipping zone, which means that it covers all of the countries which are not assigned to other shipping zones"
   },
-  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_3693484222": {
+  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_maxDays": {
+    "context": "label",
     "string": "Max Delivery Time"
   },
-  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_4047592879": {
+  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_minDays": {
+    "context": "label",
     "string": "Min Delivery Time"
   },
-  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_579967655": {
+  "src_dot_shipping_dot_components_dot_ShippingZoneInfo_dot_name": {
+    "context": "label",
     "string": "Shipping rate name"
   },
   "src_dot_shipping_dot_components_dot_ShippingZoneRatesCreatePage_dot_1161979494": {

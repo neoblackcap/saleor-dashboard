@@ -9,7 +9,23 @@ import { commonMessages } from "@saleor/intl";
 import { getFormErrors } from "@saleor/utils/errors";
 import getShippingErrorMessage from "@saleor/utils/errors/shipping";
 import React from "react";
+import { defineMessages } from "react-intl";
 import { useIntl } from "react-intl";
+
+const messages = defineMessages({
+  maxDays: {
+    defaultMessage: "Max Delivery Time",
+    description: "label"
+  },
+  minDays: {
+    defaultMessage: "Min Delivery Time",
+    description: "label"
+  },
+  name: {
+    defaultMessage: "Shipping rate name",
+    description: "label"
+  }
+});
 
 const useStyles = makeStyles(
   theme => ({
@@ -62,9 +78,10 @@ const ShippingZoneInfo: React.FC<ShippingZoneInfoProps> = props => {
           error={!!formErrors.name}
           fullWidth
           helperText={getShippingErrorMessage(formErrors.name, intl)}
-          label={intl.formatMessage({
-            defaultMessage: "Shipping rate name"
-          })}
+          label={intl.formatMessage(messages.name)}
+          inputProps={{
+            "data-test": "name"
+          }}
           name="name"
           value={data.name}
           onChange={onChange}
@@ -78,11 +95,10 @@ const ShippingZoneInfo: React.FC<ShippingZoneInfoProps> = props => {
                 error={!!formErrors.minDays}
                 fullWidth
                 helperText={getShippingErrorMessage(formErrors.minDays, intl)}
-                label={intl.formatMessage({
-                  defaultMessage: "Min Delivery Time"
-                })}
+                label={intl.formatMessage(messages.minDays)}
                 type="number"
                 inputProps={{
+                  "data-test": "minDays",
                   min: 0,
                   type: "number"
                 }}
@@ -96,11 +112,10 @@ const ShippingZoneInfo: React.FC<ShippingZoneInfoProps> = props => {
                 error={!!formErrors.maxDays}
                 fullWidth
                 helperText={getShippingErrorMessage(formErrors.maxDays, intl)}
-                label={intl.formatMessage({
-                  defaultMessage: "Max Delivery Time"
-                })}
+                label={intl.formatMessage(messages.maxDays)}
                 type="number"
                 inputProps={{
+                  "data-test": "maxDays",
                   min: 0,
                   type: "number"
                 }}
