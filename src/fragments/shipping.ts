@@ -41,6 +41,8 @@ export const shippingMethodFragment = gql`
       unit
       value
     }
+    minimumDeliveryDays
+    maximumDeliveryDays
     name
     type
     channelListings {

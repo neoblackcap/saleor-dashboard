@@ -1617,11 +1617,13 @@ export const shippingZone: ShippingZone_shippingZone = {
         }
       },
       id: "U2hpcHBpbmdNZXRob2Q6NA==",
+      maximumDeliveryDays: 10,
       maximumOrderWeight: {
         __typename: "Weight",
         unit: WeightUnitsEnum.KG,
         value: 80
       },
+      minimumDeliveryDays: 0,
       minimumOrderWeight: {
         __typename: "Weight",
         unit: WeightUnitsEnum.KG,
@@ -1680,7 +1682,9 @@ export const shippingZone: ShippingZone_shippingZone = {
         }
       },
       id: "U2hpcHBpbmdNZXRob2Q6Mw==",
+      maximumDeliveryDays: 10,
       maximumOrderWeight: null,
+      minimumDeliveryDays: 0,
       minimumOrderWeight: {
         __typename: "Weight",
         unit: WeightUnitsEnum.KG,
@@ -1739,7 +1743,9 @@ export const shippingZone: ShippingZone_shippingZone = {
         }
       },
       id: "U2hpcHBpbmdNZXRob2Q6Mg==",
+      maximumDeliveryDays: 10,
       maximumOrderWeight: null,
+      minimumDeliveryDays: 0,
       minimumOrderWeight: {
         __typename: "Weight",
         unit: WeightUnitsEnum.KG,
@@ -1783,7 +1789,9 @@ export const shippingZone: ShippingZone_shippingZone = {
         }
       },
       id: "U2hpcHBpbmdNZXRob2Q6MQ==",
+      maximumDeliveryDays: 10,
       maximumOrderWeight: null,
+      minimumDeliveryDays: 0,
       minimumOrderWeight: {
         __typename: "Weight",
         unit: WeightUnitsEnum.KG,

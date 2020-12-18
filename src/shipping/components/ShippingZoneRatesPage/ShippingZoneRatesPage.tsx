@@ -38,6 +38,8 @@ export interface FormData extends MetadataFormData {
   noLimits: boolean;
   minValue: string;
   maxValue: string;
+  minDays: string;
+  maxDays: string;
   type: ShippingMethodTypeEnum;
 }
 
@@ -89,7 +91,9 @@ export const ShippingZoneRatesPage: React.FC<ShippingZoneRatesPageProps> = ({
   const initialForm: FormData = {
     channelListings: shippingChannels,
     includeZipCodes: ZipCodeInclusion.Exclude,
+    maxDays: rate?.maximumDeliveryDays?.toString() || "",
     maxValue: rate?.maximumOrderWeight?.value.toString() || "",
+    minDays: rate?.minimumDeliveryDays?.toString() || "",
     minValue: rate?.minimumOrderWeight?.value.toString() || "",
     name: rate?.name || "",
     noLimits: false,
@@ -125,6 +129,7 @@ export const ShippingZoneRatesPage: React.FC<ShippingZoneRatesPageProps> = ({
             <Grid>
               <div>
                 <ShippingZoneInfo
+                  hasDaysRange
                   data={data}
                   disabled={disabled}
                   errors={errors}
