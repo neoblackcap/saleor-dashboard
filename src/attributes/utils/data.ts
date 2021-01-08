@@ -8,6 +8,7 @@ import { SelectedVariantAttributeFragment } from "@saleor/fragments/types/Select
 import { UploadErrorFragment } from "@saleor/fragments/types/UploadErrorFragment";
 import { FormsetData } from "@saleor/hooks/useFormset";
 import { PageDetails_page_attributes } from "@saleor/pages/types/PageDetails";
+import { ProductDetails_product_attributes } from "@saleor/products/types/ProductDetails";
 import { SearchPages_search_edges_node } from "@saleor/searches/types/SearchPages";
 import {
   AttributeInputTypeEnum,
@@ -16,6 +17,15 @@ import {
 import { MutationFetchResult } from "react-apollo";
 
 import { AttributeValueDelete } from "../types/AttributeValueDelete";
+
+export function getSelectedAttributeValues(
+  attribute: PageDetails_page_attributes | ProductDetails_product_attributes
+) {
+  if (attribute.attribute.inputType === AttributeInputTypeEnum.REFERENCE) {
+    return attribute.values.map(value => value.reference);
+  }
+  return attribute.values.map(value => value.slug);
+}
 
 export const isFileValueUnused = (
   attributesWithNewFileValue: FormsetData<null, File>,

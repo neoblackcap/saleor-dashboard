@@ -12,6 +12,7 @@ export const attributeValueFragment = gql`
     file {
       ...FileFragment
     }
+    reference
   }
 `;
 
